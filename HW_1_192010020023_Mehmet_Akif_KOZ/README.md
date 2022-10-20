@@ -1,1 +1,1 @@
-[Assignment 1.pdf](https://github.com/mehmetakifkoz/CENG3222-Image-Processing/files/9827735/Assignment.1.pdf)
+![Assignment 1](https://user-images.githubusercontent.com/53031435/196893870-52fcc11e-9ee9-4abe-9ad2-9f2c12aa259b.jpg)
