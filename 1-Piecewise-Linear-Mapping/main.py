@@ -19,18 +19,20 @@ def piecewiseLinearMapping(im1, A, B, S1, S2):
     col = im1.shape[1]
     im3 = np.zeros((row,col),np.uint8) # unit8 --> 8 bits
 
-    # numpy is used instead of loops 
-    # because it operates faster
-    im3 = np.where(im2 < A,                                             # if (color scale < A)
+    # if (color scale < A)
+    im3 = np.where(
+          im2 < A,
           f(x=im2, slope=S1/A, vertical=0, horizontal=0),
-          #
-          np.where(np.logical_and(A <= im2, im2 < B),                   # elif (color scale is between A and B)
+          im3)
+    # if (color scale is between A and B)
+    im3 = np.where(
+          np.logical_and(A <= im2, im2 < B),
           f(x=im2, slope=(S2-S1)/(B-A), vertical=S1, horizontal=A),
-          #
-          np.where(B <= im2,                                            # elif (B <= color scale)
+          im3)
+    # if (B <= color scale)
+    im3 = np.where(B <= im2,
           f(x=im2, slope=(255-S2)/(255-B), vertical=S2, horizontal=B),
-          im2 # else
-          )))
+          im3)
 
     return im3
     
