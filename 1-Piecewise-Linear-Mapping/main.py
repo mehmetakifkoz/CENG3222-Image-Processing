@@ -30,7 +30,8 @@ def piecewiseLinearMapping(im1, A, B, S1, S2):
           f(x=im2, slope=(S2-S1)/(B-A), vertical=S1, horizontal=A),
           im3)
     # if (B <= color scale)
-    im3 = np.where(B <= im2,
+    im3 = np.where(
+          B <= im2,
           f(x=im2, slope=(255-S2)/(255-B), vertical=S2, horizontal=B),
           im3)
 
