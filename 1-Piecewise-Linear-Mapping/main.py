@@ -15,9 +15,7 @@ def f(x, slope, vertical, horizontal):
 
 def piecewiseLinearMapping(im1, A, B, S1, S2):
     im2 = cv.cvtColor(im1, cv.COLOR_BGR2GRAY)
-    row = im1.shape[0]
-    col = im1.shape[1]
-    im3 = np.zeros((row,col),np.uint8) # unit8 --> 8 bits
+    im3 = im2.copy()
 
     # if (color scale < A)
     im3 = np.where(
