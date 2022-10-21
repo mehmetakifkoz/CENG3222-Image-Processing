@@ -36,14 +36,14 @@ def piecewiseLinearMapping(im1, A, B, S1, S2):
     
                                         # default values are applied if 
                                         # the user does not enter any input
-inImg= input("inImg = ") or "Image.png" # default = Image.png
-A = int(input("A  = ") or "100")        # default = 100
-B = int(input("B  = ") or "150")        # default = 150
-S1= int(input("S1 = ") or "50")         # default = 50
-S2= int(input("S2 = ") or "200")        # default = 200
+inImg= input("inImg = ") or "Image.png" # inImg = "Image.png"
+A = int(input("A  = ") or "100")        # A = 100
+B = int(input("B  = ") or "150")        # B = 150
+S1= int(input("S1 = ") or "50")         # S1= 50
+S2= int(input("S2 = ") or "200")        # S2= 200
 
 im1 = cv.imread(inImg)
 im2 = cv.cvtColor(im1, cv.COLOR_BGR2GRAY)
 im3 = piecewiseLinearMapping(im1, A, B, S1, S2)
-cv.imwrite('GrayscaleImage.png',im2)
-cv.imwrite('MappedImage.png',im3)
+cv.imwrite('Grayscale.png',im2)
+cv.imwrite('Mapped.png',im3)
