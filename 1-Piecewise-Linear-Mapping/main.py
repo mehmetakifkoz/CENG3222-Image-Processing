@@ -11,7 +11,7 @@ def f(x, slope, vertical, horizontal):
         vertical   --> the shift on the y axis
         horizontal --> the shift on the x axis
     """
-    return slope*(x-horizontal) + vertical
+    return slope * (x - horizontal) + vertical
 
 def piecewiseLinearMapping(im1, A, B, S1, S2):
     im2 = cv.cvtColor(im1, cv.COLOR_BGR2GRAY)
